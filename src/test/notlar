@@ -1,0 +1,22 @@
+========================postman================
+get ==>body'e gerek yok, end point olarak url yazilir ve dosya cagirilir./123 gibi no yazilinda
+specific cagrilmis olunur.
+delete=>body'e gerek yok, mevcudu degistirmis oluruz
+
+put==> /123 gibi no yazilinda
+ specific cagrilmis olunur. Put kismindaki body alinir, uzerinde degisim yapilir,
+ text kismini json olarak degistirirsin. sonrasinda send dediginde degisim olmus olur. Edit ediyorsun gibi
+
+ post==>body'e ihtiyac vardir ama once get ile end point alinir. Bir id ile yeniden cagirdik. Post dedik
+ body'e aldigimiz yeri ama oncesinde degisim yapiyoruz. Boylece yeni bir data gondermis oluyoruz. Ama gonder-
+ digimiz zaman sonundaki rakami silmemiz gerekir oncesinde.
+
+patch==>
+
+status==>200 ise islem olumlu bir sekilde degisir, 4o'lu olunca forbidden oluyor
+===>ekranda altta cikan browser'dan aldigimiz respond olur
+
+postmani kullanmamizin nedeni, bir sitenin datalarini otomasyon ile test edip edemeyecegimizi
+anlamak icin kullaniriz
+
+bu testi her sitede yapamayiz, bize end point'in verilmesi lazim ve datasinin acik olmasi lazim
