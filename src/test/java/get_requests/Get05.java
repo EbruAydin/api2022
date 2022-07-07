@@ -48,6 +48,17 @@ public class Get05 extends HerOkuAppBaseUrl {
        // assertTrue(response.asString().contains("bookingid"));
 
 
+        /*
+        List<Integer> responseListesi = response.jsonPath().getList("bookingid");
+        //System.out.println(responseListesi);
+        for (Integer integer : responseListesi) {
+            response = given().spec(spec).when().get("/{first}/" + integer);
+            //assertResponse.prettyPrint();
+            response.then().assertThat().body("firstname", equalTo("Aaron"),
+                    "lastname", equalTo("Chen"));
+            break;
+        }
+         */
     }
 
 
