@@ -3,6 +3,7 @@ package get_requests;
 import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
+import test_data.JsonPlaceHolderTestData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -66,6 +67,31 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
         assertEquals(expectedData.get("Via"),response.getHeader("Via"));
         assertEquals(expectedData.get("Server"),response.getHeader("Server"));
 
+    }
+
+    @Test
+    public void get02(){
+        spec.pathParams("first", "todos", "second", 2);
+
+        //2.set the expected data
+        JsonPlaceHolderTestData expectedData=new JsonPlaceHolderTestData();
+        Map<String, Object> expectedDataMap=expectedData.expectedDataWithAllKeys(1,"quis ut nam facilis et officia qui", false);
+        expectedDataMap.put("StatusCode", 200);
+        expectedDataMap.put("Via", "1.1 vegur");
+        expectedDataMap.put("Server", "cloudflare");
+        //3. Step: Send the request, get the response
+
+        Response response = given().spec(spec).when().get("/{first}/{second}");
+        Map<String, Object> actualData = response.as(HashMap.class);
+
+        //4. step: Do assertion
+        assertEquals(expectedDataMap.get("userId"), actualData.get("userId"));
+        assertEquals(expectedDataMap.get("title"), actualData.get("title"));
+        assertEquals(expectedDataMap.get("completed"), actualData.get("completed"));
+        assertEquals(expectedDataMap.get("StatusCode"), response.getStatusCode()); // response icersinde oldugu icin
+        // response uzerinden dogrudan cagirabiliriz
+        assertEquals(expectedDataMap.get("Via"),response.getHeader("Via"));
+        assertEquals(expectedDataMap.get("Server"),response.getHeader("Server"));
 
     }
 }
