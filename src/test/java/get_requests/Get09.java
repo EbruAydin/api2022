@@ -42,6 +42,15 @@ public class Get09 extends HerOkuAppBaseUrl {
         bookingsdatesMap.put("checkin", "2018-01-01");
         bookingsdatesMap.put("checkout", "2019-01-01");
 
+        /*
+        ozetle elimizdeki data'ya bakiyoruz ve orada inner map var ise onu
+        map'e atiyoruz. Map'e atadiktan sonra expected data kismina koyuyoruz bu Map'i
+
+       assertion yaptigimizda da actual kisminda bu inner map kismina ulasmak icin
+       (Map) olarak casting yapiyoruz, ve oncesinda map'a verdigimiz ismi sonrasinda da
+       get ile datayi call ediyoruz.
+         */
+
         Map<String, Object> expectedDataMap=new HashMap<>();//outer map
         expectedDataMap.put("firstname", "James");
         expectedDataMap.put("lastname", "Brown");
