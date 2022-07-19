@@ -20,3 +20,29 @@ postmani kullanmamizin nedeni, bir sitenin datalarini otomasyon ile test edip ed
 anlamak icin kullaniriz
 
 bu testi her sitede yapamayiz, bize end point'in verilmesi lazim ve datasinin acik olmasi lazim
+
+
+Practice notlari:
+Environment--nerde test yapilir, nerde yapilmaz?
+
+ilk acilan server'lar yani Development kisminda Unit testler yapilir. bunu genelde dev'ler yapar
+ama tester'lar da buyuk sirketlerde bu surece dahil olur.
+Dev kodlarini yazdi ve sonraisnda manuel olarak tester'a kodlarini kontrol etmesini isteyebilir.
+tester'dan gectikten sonra ana server'a atiyor. daha sonra code review yapiliyor diger devler
+tarafindan. sonrasinda bunlar ana kodlar ile birlesiyor. bu entegrasyon'dan sonrasinda ara test'ler basliyor.
+test ortamina tasinmis oluyor burada ve backend'de postman gibi tool'lar ile test ediliyor. entegrasyon
+oluyor ve sistemler olusuyor ve bu sistem testleri basliyor. cover testleri de bu asamada yapiliyor.
+sonrasinda canliya cikiyor. beta testleri yapildiktan sonra yayinlaniyor.
+artik bir UI oldugu icin Selenium burada kullanilmaya basliyor. Regresyon testleri yapiliyor artik. Application yeni
+bir ozellik geldiginde ya da problem olup bunlar duzeldikten sonra diger kisimlar etkilendi mi etkilenmedi mi
+gibi durumlardan oturu Regresyon testi yapiliyor.
+
+mesela postman icerisinde degisim yapmak istedik, post ile data create ettik. Put ile degisim yapmak istedik
+orada id uzerinden degisim yapamayiz, forbidden diyecektir. bu durumda autoritazation iste
+admin, password verilince giris yapip degisiklik yapabiliriz
+
+cURL==>ONEMLIIII datalari birbirimize postman uzerinden gonderme, kontrol etme amaciyla gonderilir mesela
+onu da cUrl </> kismina basiyoruz orada cUrl cikior. onu aliyoruz copy ediyoruz.
+import-raw diyoruz ve esas sitenin post kismindaki veriyi/yazim seklini alip paste edip send yapiyoruz.
+
+dinamik olan current oluyor. onu degistirmek gerekir degisim olacagi zaman, initial olani

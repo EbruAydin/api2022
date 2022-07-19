@@ -6,6 +6,11 @@ import org.junit.Before;
 
 public class JsonPlaceHolderBaseUrl {
 
+    /*
+    uri -> identification anlamina geliyor burasi. ve diyoruz ki nokta atisi yap
+    yani uri ile dogrudan hedefe ulasmis oluyoruz ki API'nin mevzusu da nokta atisi
+    yaparak data testi yapmaktir.
+     */
     protected RequestSpecification spec;
 
     @Before

@@ -55,10 +55,10 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
         //3. Step: Send the request, get the response
 
         Response response = given().spec(spec).when().get("/{first}/{second}");
-        // burada response HashMap class'ina cevrilmis olundu ve Mapp'a atandi ki expectedData ile kiyas yapalim
-        Map<String, Object> actualData = response.as(HashMap.class);
 
         //4. step: Do assertion
+        // burada response HashMap class'ina cevrilmis olundu ve Mapp'a atandi ki expectedData ile kiyas yapalim
+        Map<String, Object> actualData = response.as(HashMap.class);
         assertEquals(expectedData.get("userId"), actualData.get("userId"));
         assertEquals(expectedData.get("title"), actualData.get("title"));
         assertEquals(expectedData.get("completed"), actualData.get("completed"));

@@ -42,7 +42,7 @@ public class Get03 extends JsonPlaceHolderBaseUrl {
 
         //2,Step: set the expected data
 
-        //3.Send the request and get the request
+        //3.Send the request and get the response
         Response response = given().spec(spec).when().get("/{first}/{second}");
 
         // 4. Step: Do Assertion

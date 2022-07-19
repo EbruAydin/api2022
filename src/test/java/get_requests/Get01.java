@@ -58,7 +58,7 @@ public class Get01 {
         // response.prettyPrint();  //bu sekilde sout gibi yazdirmis oluyoruz ama bu icindeki datalari yazdirir
 
         //response icerisinde oldugu icin butun datalar ondan devam edebiliriz
-        // iv)do assertion ==dogrulama yapmis olacagiz
+
         response.then()
                 .assertThat()//assertThat kendinden sonrakileri dogrulamak demek
                 .statusCode(200) //200 oldugunu dogrula
